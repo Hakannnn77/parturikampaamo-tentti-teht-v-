@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <title>Parturikampaamo Aurora</title>
+    <link rel="stylesheet" href="parturi.css">
+</head>
+<body>
+    <h1>Parturikampaamo Aurora</h1>
+
+    <nav>
+        <ul>
+          <li><a href="#">Etusivu</a></li>
+          <li><a href="#">Palvelut</a></li>
+          <li><a href="#">Yhteystiedot</a></li>
+        </ul>
+    </nav>
+
+    <h2>Parturi Palvelut</h2>
+    <ul>
+        <li>Hiustenleikkaus</li>
+        <li>Värjäys</li>
+        <li>Kiharrus</li>
+        <li>Permanentti</li>
+        <li>Hiusten hoito</li>
+    </ul>
+
+    <h3>Täältä voit varata ajan</h3>
+    <form id="bookingForm" action="/action_page.php">
+        <label for="name">Nimi:</label><br>
+        <input type="text" id="name" name="name"><br>
+        
+        <label for="email">Sähköpostiosoite:</label><br>
+        <input type="email" id="email" name="email"><br>
+        
+        <label for="date">Ajanvarauspäivä:</label><br>
+        <input type="date" id="date" name="date"><br>
+        
+        <input type="submit" value="Lähetä">
+    </form>
+    
+    <script>
+    document.getElementById("bookingForm").addEventListener("submit", function(event){
+        event.preventDefault();
+    
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+    
+        if(name === "" || email === "") {
+            alert("Täytä Nimi ja Sähköposti!");
+        } else {
+            alert(`Kiitos ajanvarauksesta, ${name}!`);
+            this.reset();
+        }
+    });
+    </script>
+    
