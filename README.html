@@ -25,7 +25,7 @@
         <li>Hiusten hoito</li>
     </ul>
 
-    <h3>Täältä voit varata ajan</h3>
+    <h3>Täältä voit varata ajan!</h3>
     <form id="bookingForm" action="/action_page.php">
         <label for="name">Nimi:</label><br>
         <input type="text" id="name" name="name"><br>
@@ -47,7 +47,7 @@
         const email = document.getElementById("email").value.trim();
     
         if(name === "" || email === "") {
-            alert("Täytä Nimi ja Sähköposti!");
+            alert("Täytä Nimi ja Sähköposti! Kiitos!");
         } else {
             alert(`Kiitos ajanvarauksesta, ${name}!`);
             this.reset();
